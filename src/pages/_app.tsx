@@ -2,21 +2,68 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { MantineProvider } from "@mantine/core";
 import HeaderAction from '../components/header'; // Adjust the path as needed
-
+import FooterLinks from '../components/footer'; // Adjust the path as needed
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
   const links = [
     {
       link: '/',
-      label: 'Home',
-      links: [ // Provide an array of sub-links within the 'links' property
-        { link: '/subpage1', label: 'Subpage 1' },
-        { link: '/subpage2', label: 'Subpage 2' },
+      label: 'Homepage',
+      links: [
+        { link: '/about', label: 'About' }
       ],
     },
-    // Add more top-level links as needed
+    {
+      link: '/docs',
+      label: 'Lage',
+      links: [] // Empty array for sub-links since 'Lage' doesn't have any sub-links.
+    },
+    {
+      link: '/blog',
+      label: 'Gallery',
+      links: [] // Empty array for sub-links since 'Gallery' doesn't have any sub-links.
+    },
+    {
+      link: '/docs',
+      label: 'Zimmer',
+      links: [] // Empty array for sub-links since 'Zimmer' doesn't have any sub-links.
+    },
+    {
+      link: '/blog',
+      label: 'Kontakt',
+      links: [] // Empty array for sub-links since 'Kontakt' doesn't have any sub-links.
+    }
   ];
+  
+  const data = [
+    {
+      title: 'Hello',
+      links: [
+        { link: '/about', label: 'About' },
+        { link: '/about', label: 'About' },
+        { link: '/about', label: 'About' }
+      ],
+    },
+    {
+      title: 'Zweites',
+      links: [
+        { link: '/about', label: 'About' },
+        { link: '/about', label: 'About' },
+        { link: '/about', label: 'About' }
+      ],
+    },
+    {
+      title: 'Drittes',
+      links: [
+        { link: '/about', label: 'About' },
+        { link: '/about', label: 'About' },
+        { link: '/about', label: 'About' }
+      ],
+    },
+  ];
+  
+  
   return (
     <>
       <Head>
@@ -42,6 +89,7 @@ export default function App(props: AppProps) {
       >
         <Component {...pageProps} />
       </MantineProvider>
+      <FooterLinks data={data} />
     </>
   );
 }

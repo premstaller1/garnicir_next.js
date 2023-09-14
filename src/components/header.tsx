@@ -13,7 +13,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import { MantineLogo } from '@mantine/ds';
 
-const HEADER_HEIGHT = rem(70);
+const HEADER_HEIGHT = rem(80);
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -41,7 +41,7 @@ const useStyles = createStyles((theme) => ({
     padding: `${rem(8)} ${rem(12)}`,
     borderRadius: theme.radius.sm,
     textDecoration: 'none',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
 
@@ -110,7 +110,7 @@ export function HeaderAction({ links }: HeaderActionProps) {
           {items}
         </Group>
         <Button radius="xl" h={30}>
-          Get early access
+          Contact us!
         </Button>
       </Container>
     </Header>

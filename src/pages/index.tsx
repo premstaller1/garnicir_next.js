@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Box, Center, Container } from "@mantine/core";
+import HeroImageBackground from "../components/about";
 
 export default function Home() {
   return (
@@ -10,11 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container className="box">
-        <Center h={724} mx="auto">
-          <Box>All elements inside Center are centered in Container.</Box>
-        </Center>
-      </Container>
+      <HeroImageBackground />
     </>
   );
 }
