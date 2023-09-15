@@ -66,19 +66,6 @@ export default function App(props: AppProps) {
   
   return (
     <>
-      <Head>
-        <title>Page title</title>
-        <link rel="shortcut icon" href="/favicon.svg" />
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-      </Head>
-      <div>
-      <HeaderAction links={links} />
-      {/* Rest of your page content */}
-      </div>
-
       <MantineProvider
         withGlobalStyles
         withNormalizeCSS
@@ -87,9 +74,19 @@ export default function App(props: AppProps) {
           colorScheme: "dark",
         }}
       >
-        <Component {...pageProps} />
-      </MantineProvider>
+      <Head>
+        <title>Page title</title>
+        <link rel="shortcut icon" href="/favicon.svg" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+      <HeaderAction links={links} />
+      <Component {...pageProps} />
       <FooterLinks data={data} />
+      </MantineProvider>
+
     </>
   );
 }

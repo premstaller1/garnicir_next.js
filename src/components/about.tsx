@@ -1,10 +1,12 @@
 import { Title, Text, Container, Button, Overlay, createStyles, rem } from '@mantine/core';
+import CarouselAbout from "../components/carousel";
+
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
     position: 'relative',
-    paddingTop: rem(180),
-    paddingBottom: rem(130),
+    paddingTop: rem(350),
+    paddingBottom: rem(350),
     backgroundImage:
       'url(https://images.unsplash.com/photo-1573164713988-8665fc963095?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=980&q=80)',
     backgroundSize: 'cover',
@@ -65,7 +67,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   control: {
-    height: rem(42),
+    height: rem(70),
     fontSize: theme.fontSizes.md,
 
     '&:not(:first-of-type)': {
@@ -99,25 +101,21 @@ export function HeroImageBackground() {
 
       <div className={classes.inner}>
         <Title className={classes.title}>
-          Automated AI code reviews for{' '}
+          Welcome to{' '}
           <Text component="span" inherit className={classes.highlight}>
-            any stack
+            Garni Cir
           </Text>
         </Title>
 
         <Container size={640}>
           <Text size="lg" className={classes.description}>
-            Build more reliable software with AI companion. AI is also trained to detect lazy
-            developers who do nothing and just complain on Twitter.
+            Explore the mountains and enjoy nature.
           </Text>
         </Container>
 
         <div className={classes.controls}>
           <Button className={classes.control} variant="white" size="lg">
-            Get started
-          </Button>
-          <Button className={cx(classes.control, classes.secondaryControl)} size="lg">
-            Live demo
+            Contact us!
           </Button>
         </div>
       </div>

@@ -13,14 +13,18 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import { MantineLogo } from '@mantine/ds';
 
-const HEADER_HEIGHT = rem(80);
+let HEADER_HEIGHT = rem(120);
 
 const useStyles = createStyles((theme) => ({
+
   inner: {
     height: HEADER_HEIGHT,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    '&:hover': {
+      height: rem(120),
+    },
   },
 
   links: {
@@ -100,7 +104,7 @@ export function HeaderAction({ links }: HeaderActionProps) {
   });
 
   return (
-    <Header height={HEADER_HEIGHT} sx={{ borderBottom: 0 }} mb={120}>
+    <Header height={HEADER_HEIGHT} sx={{ borderBottom: 0 }} mb={0}>
       <Container className={classes.inner} fluid>
         <Group>
           <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
